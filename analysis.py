@@ -3,7 +3,22 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 col=['sepal_length','sepal_width','petal_length','petal_width','type']
-df = pd.read_csv ("iris.csv",names=col)
+iris = pd.read_csv ("iris.csv",names=col)
+
+print ("First five rows")
+print(iris.head())
+#
+print("columns", iris.columns)
+#
+print("shape:", iris.shape)
+#
+print("Size:",iris.size)
+#
+print("no of  samples available for each type")
+print(iris["type"].value_counts())
+#
+print(iris.describe())
+
 
 plt.scatter (df['sepal_length'], df['sepal_width'])
 plt.title("Sepal length versus Sepal width")
