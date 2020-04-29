@@ -1,0 +1,9 @@
+# As per request on the Project instructions video, 
+# the Iris Dataset should be uploaded in .txt format.
+# With this programm I will convert the 
+# Iris Dataset .csv file into a .txt format.
+
+
+df = pd.read_csv ("irisdataset.csv")
+
+irisdataset.py a.csv > a.txt

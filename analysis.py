@@ -2,7 +2,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv ("irisdataset.csv")
+
+from sklearn.dataset import load_iris
+
+df = pd.read_csv ("iris.csv")
 
 plt.scatter (df['sepal_length'], df['sepal_width'])
 plt.title("Sepal length versus Sepal width")
