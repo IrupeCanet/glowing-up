@@ -29,8 +29,22 @@ iris_setosa=iris.loc[iris["type"]=="Iris-setosa"]
 iris_virginica=iris.loc[iris["type"]=="Iris-virginica"]
 iris_versicolor=iris.loc[iris["type"]=="Iris-versicolor"]
 
-# histograms
-sns.FacetGrid(iris,hue="type").map(plt.scatter,"sepal_length","sepal_width").add_legend()
+# Scatterplot of each pair of variables
+
+plt.scatter(iris['sepal_length'],['sepal_width'])
+plt.title("Sepal Length vs. Sepal Width")
+plt.xlabel("Sepal Length")
+plt.ylabel("Sepal Width")
 plt.show()
+
+plt.scatter(iris['petal_length'],['petal_width'])
+plt.title("Petal Length vs. Petal Width")
+plt.xlabel("Petal Length")
+plt.ylabel("Petal Width")
+plt.show()
+
+sns.pairplot(iris, hue="species")
+plt.show()
+
 
 
