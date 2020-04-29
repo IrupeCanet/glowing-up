@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
- col=['sepal_length','sepal_width','petal_length','petal_width','type']
+col=['sepal_length','sepal_width','petal_length','petal_width','type']
 df = pd.read_csv ("iris.csv",names=col)
 
 plt.scatter (df['sepal_length'], df['sepal_width'])
