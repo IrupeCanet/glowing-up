@@ -2,15 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
-from sklearn.dataset import load_iris
-
-dataset=pd.DataFrame(dataset['data],columns=["Petal Length","Petal Width","Sepal Length","Sepal Width"])
-data['Species']=dataset['target']
-data['Species']=data['Species'].apply(lambda x: dataset['target_names'][x])
-data.head()
-
-df = pd.read_csv ("iris.csv")
+ col=['sepal_length','sepal_width','petal_length','petal_width','type']
+df = pd.read_csv ("iris.csv",names=col)
 
 plt.scatter (df['sepal_length'], df['sepal_width'])
 plt.title("Sepal length versus Sepal width")
