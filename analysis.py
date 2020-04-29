@@ -29,22 +29,48 @@ iris_setosa=iris.loc[iris["type"]=="Iris-setosa"]
 iris_virginica=iris.loc[iris["type"]=="Iris-virginica"]
 iris_versicolor=iris.loc[iris["type"]=="Iris-versicolor"]
 
-# Scatterplot of each pair of variables
 
-plt.scatter(iris['sepal_length'],['sepal_width'])
-plt.title("Sepal Length vs. Sepal Width")
+# Histograms
+
+plt.figure(figsize = (10,7))
+x = iris["sepal_width"]
+
+plt.hist(x, bins = 20, color = "purple")
+plt.title("Sepal Width")
+plt.xlabel("Sepal Width")
+plt.ylabel("Sepal Length")
+plt.show()
+
+plt.figure(figsize = (10,7))
+x = iris["sepal_length"]
+
+plt.hist(x, bins = 20, color = "purple")
+plt.title("Sepal Length")
 plt.xlabel("Sepal Length")
 plt.ylabel("Sepal Width")
 plt.show()
 
-plt.scatter(iris['petal_length'],['petal_width'])
-plt.title("Petal Length vs. Petal Width")
+plt.figure(figsize = (10,7))
+x = iris["petal_width"]
+
+plt.hist(x, bins = 20, color = "purple")
+plt.title("Petal Width")
+plt.xlabel("Petal Width")
+plt.ylabel("Petal Length")
+plt.show()
+
+plt.figure(figsize = (10,7))
+x = iris["petal_length"]
+
+plt.hist(x, bins = 20, color = "purple")
+plt.title("Petal Length")
 plt.xlabel("Petal Length")
 plt.ylabel("Petal Width")
 plt.show()
 
-sns.pairplot(iris, hue="species")
-plt.show()
+
+
+
 
 
 
