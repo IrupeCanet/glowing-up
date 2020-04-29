@@ -30,7 +30,7 @@ iris_virginica=iris.loc[iris["type"]=="Iris-virginica"]
 iris_versicolor=iris.loc[iris["type"]=="Iris-versicolor"]
 
 # histograms
-sns.FacetGrid(iris,hue="type",size=3).map(sns.distplot,"petal_length").add_legend()
+sns.FacetGrid(iris,hue="type").map(plt.scatter,"sepal_length","sepal_width").add_legend()
 plt.show()
 
 
