@@ -36,43 +36,36 @@ iris_versicolor=iris.loc[iris["type"]=="Iris-versicolor"]
 # Histograms:
 plt.figure(figsize = (12.0,10.0))
 x = iris["sepal_width"]
-plt.hist(x, bins = 30, color = "green")
+plt.hist(x, bins = 20, color = "green")
 plt.title("Sepal Width in cm")
 plt.xlabel("Sepal Width")
 plt.ylabel("Count")
 plt.savefig("Sepal Width Histogram.png")
-plt.show()
-plt.clf()
-
-
-
 
 plt.figure(figsize = (15.0,10.0))
 x = iris["sepal_length"]
-plt.hist(x, bins = 50, color = "orange")
-plt.title("Sepal Length")
+plt.hist(x, bins = 30, color = "orange")
+plt.title("Sepal Length in cm")
 plt.xlabel("Sepal Length")
-plt.ylabel("Sepal Width")
-plt.savefig("Sepal Length histogram.png")
-plt.clf()
+plt.ylabel("Count")
+plt.savefig("Sepal Length Histogram.png")
 
-plt.figure(figsize = (10.0,7.0))
+plt.figure(figsize = (12.0,10.0))
 x = iris["petal_width"]
-plt.hist(x, bins = 20, color = "green")
-plt.title("Petal Width")
+plt.hist(x, bins = 20, color = "blue")
+plt.title("Petal Width in cm")
 plt.xlabel("Petal Width")
-plt.ylabel("Petal Length")
+plt.ylabel("Count")
 plt.savefig("Petal Width Histogram.png")
-plt.clf()
 
-plt.figure(figsize = (15.0,12.0))
+plt.figure(figsize = (20.0,15.0))
 x = iris["petal_length"]
-plt.hist(x, bins = 70, color = "green")
-plt.title("Petal Length")
+plt.hist(x, bins = 30, color = "red")
+plt.title("Petal Length in cm")
 plt.xlabel("Petal Length")
-plt.ylabel("Petal Width")
+plt.ylabel("Count")
 plt.savefig("Petal Length Histogram.png")
-plt.clf()
+
 
 #***************************************************
 # Scatter plots of each pair of variables:
