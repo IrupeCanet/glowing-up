@@ -76,7 +76,8 @@ plt.savefig("Petal Length Histogram.png")
 
 #***************************************************
 # Scatter plots of each pair of variables:
-
+import pandas as pd
+import seaborn as sns
 iris = pd.read_csv("iris.csv")
 sns.pairplot(iris, hue='species')
 plt.show()

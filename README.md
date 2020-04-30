@@ -20,41 +20,49 @@ $ python analysis.py
 # The process
 To start creating my program I have downloaded the iris Dataset in csv format from: https://tableconvert.com/?output=csv. I have also imported pandas, matplotlib, seaborn, numpy and sys libraries into Visual Studio Code.
 
-
-from the analysis of data domension and categorization we canobserve...
-Data Dimension and Categorization####
-
 The dataset contains 150 observations with 5 attributes named as Sepal width, Sepal length, Petal width, Petal length and flower type.
- [1] "Number of Rows"
- [1] 150
- [1] "Number of Column"
- [1] 5
+"Number of Rows"
+ 150
+"Number of Column"
+ 5
 Out of which 4 are quantitative variables which are Sepal width, Sepal length, Petal width and Petal length and 1 is categorical variable which is flower type or species having 3 values of Virginica, Versicolour and Setosa.
- 'data.frame':    150 obs. of  5 variables:
-  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
-  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
-  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
-  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
-  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
-Observing the data, we realize that every species of flower have 50 observations each.
-  Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
-  1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
-  Median :5.800   Median :3.000   Median :4.350   Median :1.300  
-  Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
-  3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
-  Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+In order to see the shape, size, etc I used:
+
+$print ("First five rows")
+$print(iris.head())
+$print("***********************************")
+$print("columns", iris.columns)
+$print("***********************************")
+$print("shape:", iris.shape)
+$print("***********************************")
+$print("Size:",iris.size)
+$print("***********************************")
+$print("no of  samples available for each type")
+$print(iris["type"].value_counts())
+$print("***********************************")
+$print(iris.describe())
+
+Observing the data, we realize that every species of flower have 50 observations each, meaning is a balanced dataset.
         Species  
   setosa    :50  
   versicolor:50  
   virginica :50 
 
-Source:
+I have also added the following in order to save the output of the program into a .txt file:
+
+$stdoutOrigin=sys.stdout 
+$sys.stdout = open("analysis.txt", "w")
+and 
+$sys.stdout.close()
+$sys.stdout=stdoutOrigin
+
+
+*Source*:
+- http://markdownpad.com/
+- https://realpython.com/pandas-python-explore-dataset/
 - https://stackoverflow.com/questions/25023233/how-to-save-python-screen-output-to-a-text-file
-
 - https://stackoverflow.com/questions/37039685/hide-axis-values-but-keep-axis-tick-labels-in-matplotlib
-
-*Notes:
-
+- https://docs.python.org/3/howto/sorting.html?highlight=explore%20dataset
 
 # Data Visualization
 
@@ -85,11 +93,11 @@ $plt.show()
 From the observation of this plot, there seems to be a positive correlation between the length and width of all the species, however there is a distinguishing strong correlation and relationship between petal length and petal width.
 
 
-**Notes: 
+*Notes*: 
 - Unfortunatly I could not solve visualization issue that ocurred once I added the pairplot to the program. The Histograms were saving as .png files to the main folder, but once I have added $plt.show() at the end of the program to output the pairplot, all the plots output with the ation.
 - Another issue I came accross with and i couldt not solve yet was delete the reference from the  x axis. I have tried few methods bt none of them worked out for me.
 
-Source:
+*Source*:
 - https://www.oreilly.com/programming/free/files/a-whirlwind-tour-of-python.pdf
 - https://realpython.com/lessons/python-histogram-plotting-numpy-matplotlib-pandas-seaborn-conclusion/
 - https://realpython.com/lessons/numpy-histograms/
