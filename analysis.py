@@ -39,7 +39,7 @@ plt.hist(x, bins = 20, color = "green")
 plt.title("Sepal Width")
 plt.xlabel("Sepal Width")
 plt.ylabel("Sepal Length")
-plt.show()
+plt.savefig("Sepal Width Histogram.png")
 
 plt.figure(figsize = (15.0,10.0))
 x = iris["sepal_length"]
@@ -48,17 +48,16 @@ plt.hist(x, bins = 50, color = "green")
 plt.title("Sepal Length")
 plt.xlabel("Sepal Length")
 plt.ylabel("Sepal Width")
-plt.show()
+plt.savefig("Sepal Length histogram.png")
 
 plt.figure(figsize = (10.0,7.0))
 x = iris["petal_width"]
-
 
 plt.hist(x, bins = 20, color = "green")
 plt.title("Petal Width")
 plt.xlabel("Petal Width")
 plt.ylabel("Petal Length")
-plt.show()
+plt.savefig("Petal Width Histogram.png")
 
 plt.figure(figsize = (15.0,12.0))
 x = iris["petal_length"]
@@ -67,10 +66,13 @@ plt.hist(x, bins = 70, color = "green")
 plt.title("Petal Length")
 plt.xlabel("Petal Length")
 plt.ylabel("Petal Width")
+plt.savefig("Petal Length Histogram.png")
+
+
+# Scatter plots of each pair of variables
+
+plt.plot(iris["petal_width"], iris["petal_length"], 'b.')
 plt.show()
-
-# Scatter plot of each pair of variables
-
 
 
 
