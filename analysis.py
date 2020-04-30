@@ -4,6 +4,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import sys
+
 col=['sepal_length','sepal_width','petal_length','petal_width','type']
 iris = pd.read_csv ("iris.csv",names=col)
 
@@ -11,6 +13,8 @@ iris = pd.read_csv ("iris.csv",names=col)
 #****************************************************************
 
 #Outputs of Shape and Size
+stdoutOrigin=sys.stdout 
+sys.stdout = open("analysis.txt", "w")
 print ("First five rows")
 print(iris.head())
 print("***********************************")
@@ -31,6 +35,9 @@ iris_setosa=iris.loc[iris["type"]=="Iris-setosa"]
 iris_virginica=iris.loc[iris["type"]=="Iris-virginica"]
 iris_versicolor=iris.loc[iris["type"]=="Iris-versicolor"]
 
+sys.stdout.close()
+sys.stdout=stdoutOrigin
+
 #**************************************************************
 
 # Histograms:
@@ -41,6 +48,7 @@ plt.title("Sepal Width in cm")
 plt.xlabel("Sepal Width")
 plt.ylabel("Count")
 plt.savefig("Sepal Width Histogram.png")
+plt.clf
 
 plt.figure(figsize = (15.0,10.0))
 x = iris["sepal_length"]
@@ -49,6 +57,7 @@ plt.title("Sepal Length in cm")
 plt.xlabel("Sepal Length")
 plt.ylabel("Count")
 plt.savefig("Sepal Length Histogram.png")
+plt.clf
 
 plt.figure(figsize = (12.0,10.0))
 x = iris["petal_width"]
@@ -57,6 +66,7 @@ plt.title("Petal Width in cm")
 plt.xlabel("Petal Width")
 plt.ylabel("Count")
 plt.savefig("Petal Width Histogram.png")
+plt.clf
 
 plt.figure(figsize = (20.0,15.0))
 x = iris["petal_length"]
@@ -65,7 +75,7 @@ plt.title("Petal Length in cm")
 plt.xlabel("Petal Length")
 plt.ylabel("Count")
 plt.savefig("Petal Length Histogram.png")
-
+plt.clf
 
 #***************************************************
 # Scatter plots of each pair of variables:
