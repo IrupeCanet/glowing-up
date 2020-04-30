@@ -4,6 +4,6 @@
 # Iris Dataset .csv file into a .txt format.
 
 
-df = pd.read_csv ("irisdataset.csv")
+iris = pd.read_csv ("iris.csv")
 
 irisdataset.py a.csv > a.txt

@@ -72,11 +72,7 @@ plt.clf()
 #***************************************************
 # Scatter plots of each pair of variables:
 
-plt.scatter(iris["petal_width"], iris["petal_length"])
+sns.pairplot(iris,hue='species',hue_order=None, palette=None, vars=None, x_vars=-1, y_vars=10, kind='scatter', diag_kind='auto', markers=None, height=2.5, aspect=1, dropna=True, plot_kws=None, diag_kws=None, grid_kws=None, size=None)
 plt.show()
-
-
-
-
 
 
