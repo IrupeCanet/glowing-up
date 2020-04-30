@@ -48,7 +48,6 @@ plt.title("Sepal Width in cm")
 plt.xlabel("Sepal Width")
 plt.ylabel("Count")
 plt.savefig("Sepal Width Histogram.png")
-plt.clf
 
 plt.figure(figsize = (15.0,10.0))
 x = iris["sepal_length"]
@@ -57,7 +56,6 @@ plt.title("Sepal Length in cm")
 plt.xlabel("Sepal Length")
 plt.ylabel("Count")
 plt.savefig("Sepal Length Histogram.png")
-plt.clf
 
 plt.figure(figsize = (12.0,10.0))
 x = iris["petal_width"]
@@ -66,7 +64,6 @@ plt.title("Petal Width in cm")
 plt.xlabel("Petal Width")
 plt.ylabel("Count")
 plt.savefig("Petal Width Histogram.png")
-plt.clf
 
 plt.figure(figsize = (20.0,15.0))
 x = iris["petal_length"]
@@ -75,15 +72,11 @@ plt.title("Petal Length in cm")
 plt.xlabel("Petal Length")
 plt.ylabel("Count")
 plt.savefig("Petal Length Histogram.png")
-plt.clf
+
 
 #***************************************************
 # Scatter plots of each pair of variables:
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 iris = pd.read_csv("iris.csv")
-
 sns.pairplot(iris, hue='species')
 plt.show()
