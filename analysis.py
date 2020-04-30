@@ -7,6 +7,7 @@ import numpy as np
 col=['sepal_length','sepal_width','petal_length','petal_width','type']
 iris = pd.read_csv ("iris.csv",names=col)
 
+
 #****************************************************************
 
 #Outputs of Shape and Size
@@ -33,18 +34,22 @@ iris_versicolor=iris.loc[iris["type"]=="Iris-versicolor"]
 #**************************************************************
 
 # Histograms:
-plt.figure(figsize = (10.0,8.0))
+plt.figure(figsize = (12.0,10.0))
 x = iris["sepal_width"]
-plt.hist(x, bins = 20, color = "green")
-plt.title("Sepal Width")
+plt.hist(x, bins = 30, color = "green")
+plt.title("Sepal Width in cm")
 plt.xlabel("Sepal Width")
-plt.ylabel("Sepal Length")
+plt.ylabel("Count")
 plt.savefig("Sepal Width Histogram.png")
+plt.show()
 plt.clf()
+
+
+
 
 plt.figure(figsize = (15.0,10.0))
 x = iris["sepal_length"]
-plt.hist(x, bins = 50, color = "green")
+plt.hist(x, bins = 50, color = "orange")
 plt.title("Sepal Length")
 plt.xlabel("Sepal Length")
 plt.ylabel("Sepal Width")
@@ -71,7 +76,11 @@ plt.clf()
 
 #***************************************************
 # Scatter plots of each pair of variables:
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-sns.pairplot(iris,hue='species')
+iris = pd.read_csv("iris.csv")
+
+sns.pairplot(iris, hue='species')
 plt.show()
-plt.clf
